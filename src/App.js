@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import logo from './images/MOOTCH-Logo-Horizontal-blanc.png';
 import './App.css';
-import { render } from 'react-dom';
-import { DuotoneImage } from 'react-duotone';
-
+import ImageFilter from 'react-image-filter';
 
 let messages = ["Match your mood", "How are you feeling ?", "Let us find it", "Simply the best", "Adidas"],
 message = messages[Math.floor(Math.random() * messages.length)];
@@ -32,23 +30,15 @@ class Header extends Component {
     );
   }
 }
-class App2 extends Component {
-  render() {
-    return <DuotoneImage
-      className='image-preview'
-      alt='Your image description'
-      src='./images/duotone/Duotone Godzilla.jpg'
-      primaryColor='#eb8071'
-      secondaryColor='#2c2a66' />;
-  }
-}
 class App extends Component {
   render() {
     return (
-      <div className="App" style={{'height': "100vh","backgroundImage": correctbackground}}>
-        <App2 />
-        <Header/>
-      </div>
+      <ImageFilter
+        image={test}
+        filter={ 'duotone' } // see docs beneath
+        colorOne={ [44, 42, 102] }
+        colorTwo={ [235, 128, 113] }
+      />
     );
   }
 }
