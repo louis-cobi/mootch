@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 .App-header {
   background-color: black;
   height: 50px;
@@ -5,14 +6,16 @@
   color: white;
 }
 .App-logo-div{
-
+  float: left;
 }
 .App-logo {
   height: 50px;
 }
 .App-menu{
-
+  float: right;
 }
-.App-menu ul{
+.App-menu ul li{
   display: inline-block;
+  margin: 0 30px;
+  font-family: 'roboto',sans-serif;
 }
