@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import logo from './images/MOOTCH-Logo-Horizontal-blanc.png';
 import './App.css';
-import makeDuoToneImage from 'duotone-image'
-
+import ImageFilter from 'react-image-filter';
 
 let messages = ["Match your mood", "How are you feeling ?", "Let us find it", "Simply the best", "Adidas"],
 message = messages[Math.floor(Math.random() * messages.length)];
@@ -11,12 +10,6 @@ let randomBackground = ["http://java2s.com/style/demo/border.png","https://lemag
 test = randomBackground[Math.floor(Math.random() * randomBackground.length)];
 let correctbackground = "url(" + test + ")"
 
-let testimg = makeDuoToneImage({
-  domNode: '.image',
-  imageUrl: 'https://images.unsplash.com/photo-1505881502353-a1986add3762',
-  color1: [24, 192, 102],
-  color2: [0, 0, 30]
-});
 
 class Header extends Component {
   render() {
@@ -38,17 +31,17 @@ class Header extends Component {
     );
   }
 }
-class App2 extends Component {
-  render() {
-    return
-  }
-}
 class App extends Component {
   render() {
     return (
-      <div className="App" style={{'height': "100vh","backgroundImage": correctbackground}}>
-        <Header/>
-      </div>
+      <div><Header/>
+      <ImageFilter
+        image={test}
+        filter={ 'duotone' } // see docs beneath
+        colorOne={ [44, 42, 102] }
+        colorTwo={ [235, 128, 113] }
+      /></div>
+
     );
   }
 }
