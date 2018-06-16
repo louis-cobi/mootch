@@ -10,38 +10,91 @@ let randomBackground = ["http://java2s.com/style/demo/border.png","https://lemag
 test = randomBackground[Math.floor(Math.random() * randomBackground.length)];
 let correctbackground = "url(" + test + ")"
 
+let randomMovie = ["Interstellar", "Godzilla", "Man of Steel", "Poppey", "The Hobbit"],
+randomfilm = randomMovie[Math.floor(Math.random() * randomMovie.length)];
 
 class Header extends Component {
   render() {
     return (
       <header className="App-header">
         <div className="App-logo-div">
-          <img src={logo} className="App-logo" alt="Logo-Mootch" />
+          <a href=""><img src={logo} className="App-logo" alt="Logo-Mootch" /></a>
         </div>
         <div className="App-menu">
           <ul>
-            <li>Home</li>
-            <li>Discover</li>
-            <li>Watchlists</li>
-            <li>Movies</li>
-            <li>Profil</li>
+            <a href=""><li>Home</li></a>
+            <a href=""><li>Discover</li></a>
+            <a href=""><li>Watchlists</li></a>
+            <a href=""><li>Movies</li></a>
+            <a href=""><li>Profil</li></a>
           </ul>
         </div>
       </header>
     );
   }
 }
+class RandomMovie extends Component {
+  render() {
+    return(
+      <div className="randomMovie">
+        <h2>{randomfilm}</h2>
+      </div>
+    );
+  }
+}
+class Backgroundimage extends Component {
+  render(){
+    return(
+      <div className="backgroundimage">
+        <ImageFilter
+          image={test}
+          filter={ 'duotone' }
+          colorOne={ [44, 42, 102] }
+          colorTwo={ [235, 128, 113] }>
+        </ImageFilter>
+        <RandomMovie/>
+      </div>
+    );
+  }
+}
+class BackgroundHeader extends Component {
+  render() {
+    return(
+      <div>
+        <Header/>
+          <Backgroundimage />
+      </div>
+    );
+  }
+}
+
+class Catchphrase extends Component{
+  render(){
+    return(
+      <div className="catchphrase">
+        <h2>{message}</h2>
+        <p>Find your movie tonight</p>
+        <button>MOOTCH</button>
+      </div>
+    );
+  }
+}
+class MainContener extends Component {
+  render() {
+    return(
+      <div className="main-contener">
+        <Catchphrase/>
+      </div>
+    );
+  }
+}
 class App extends Component {
   render() {
     return (
-      <div><Header/>
-      <ImageFilter
-        image={test}
-        filter={ 'duotone' } // see docs beneath
-        colorOne={ [44, 42, 102] }
-        colorTwo={ [235, 128, 113] }
-      /></div>
-
+      <div>
+        <BackgroundHeader/>
+        <MainContener/>
+      </div>
     );
   }
 }

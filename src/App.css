@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+body{
+  font-family: 'roboto', sans-serif;
+  font-weight: 900;
+}
 .App-header {
-  background-color: black;
   height: 50px;
   padding: 15px;
   color: white;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
 }
 .App-logo-div{
   float: left;
@@ -16,6 +22,62 @@
 }
 .App-menu ul li{
   display: inline-block;
-  margin: 0 30px;
+  margin: 0 50px;
+  font-size: 16px;
+  color:#fff;
+  text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.36);
+}
+.backgroundimage{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+.randomMovie{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 15;
+}
+.randomMovie h2{
+  position: relative;
+  bottom: 0;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.36);
+}
+.main-contener{
+  position: fixed;
+  height: 80vh;
+  width: 90%;
+  margin:5% 5%;
+}
+.catchphrase{
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  color:#fff;
+  text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.26);
+  position: relative;
+  top: 30%;
+}
+.catchphrase h2{
+  font-size: 50px;
+  margin-bottom: 0;
+}
+.catchphrase p{
+  font-size: 20px;
+  margin-top: 10px;
+}
+.catchphrase button{
+  margin-top: 20px;
+  padding: 10px 60px;
+  font-size: 20px;
+  border-radius: 5px;
+  border:0px;
+  box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.26);
   font-family: 'roboto',sans-serif;
+  font-weight: 900;
+  color:#2c2a66;
 }
